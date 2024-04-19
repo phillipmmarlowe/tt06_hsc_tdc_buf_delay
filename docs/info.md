@@ -28,7 +28,9 @@ pg_src (to select between pg_in and pg_src),
 
 valid_in (valid protocol for streaming interface), 
 
-clk_l (launch clock), clk_c (capture clock), and
+clk_l (launch clock), 
+
+clk_c (capture clock), and
 
 reg (named pg_bypass in the top level module and can be used to bypass a register stage used to synchronize the timing of streamed data)
 
