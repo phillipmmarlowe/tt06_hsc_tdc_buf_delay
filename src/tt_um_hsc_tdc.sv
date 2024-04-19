@@ -1,6 +1,6 @@
 `define default_netname none
 // `timescale 1ns/1ps
-module tt_um_hsc_tdc (
+module tt_um_hsc_tdc_buf.sv (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output reg  [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
