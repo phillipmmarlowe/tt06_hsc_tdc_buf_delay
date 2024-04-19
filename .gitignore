@@ -1,8 +1,10 @@
 .DS_Store
 .idea
 .vscode
+.hdl_checker
 *.vcd
 *.vpd
+*.nfs*
 *.png
 *.svg
 *.sh
@@ -13,6 +15,8 @@ src/resynth_rename
 runs
 tt_submission
 src/user_config.tcl
+src/dummy_macro/lef/tt_*
+src/dummy_macro/Deprecated*
 test/sim_build
 test/__pycache__/
 test/results.xml
@@ -23,4 +27,13 @@ test/rename_gl
 test/*.tchk
 text/*.xml
 test/vcs
+test/sdf_renamed_out
+test/skywater_stdcell_fixed
+test/post_process
+test/gln_renamed_out
+test/tdc_vcd_to_json.py
+test/test_git.py
+test/test_local.py
+test/test_rtl.py
+test_old/
 tt/
