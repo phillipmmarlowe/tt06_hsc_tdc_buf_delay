@@ -2,6 +2,14 @@
 .idea
 .vscode
 *.vcd
+*.vpd
+*.png
+*.svg
+*.sh
+*.ipynb_checkpoints
+*.vdb
+src/std_cell_macros/Deprecated_Copy_Individual_StdCells
+src/resynth_rename
 runs
 tt_submission
 src/user_config.tcl
@@ -9,3 +17,10 @@ test/sim_build
 test/__pycache__/
 test/results.xml
 test/gate_level_netlist.v
+test/*.csv
+test/*.key
+test/rename_gl
+test/*.tchk
+text/*.xml
+test/vcs
+tt/

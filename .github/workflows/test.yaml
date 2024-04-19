@@ -6,8 +6,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
 
       - name: Install iverilog
         shell: bash
@@ -19,9 +17,27 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Python packages
+      - name: Install cocotb 1.8.x
         shell: bash
-        run: pip install -r test/requirements.txt
+        run: |
+          pip install cocotb~=1.8.0
+          cocotb-config --libpython
+          cocotb-config --python-bin
+          
+      - name: Set up environment variables
+        shell: bash
+        run: |
+          cat << EOF >> $GITHUB_ENV
+          PDK_ROOT=/home/runner/pdk
+          PDK=sky130A
+          EOF
+  
+      - name: Install Sky130 PDK
+        uses: TinyTapeout/volare-action@v2
+        with:
+          pdk_name: sky130
+          pdk_version: cd1748bb197f9b7af62a54507de6624e30363943
+          pdk_root: /home/runner/pdk
 
       - name: Run tests
         run: |
@@ -32,7 +48,7 @@ jobs:
           ! grep failure results.xml
 
       - name: Test Summary
-        uses: test-summary/action@v2.3
+        uses: test-summary/action@v2.2
         with:
           paths: "test/results.xml"
         if: always()

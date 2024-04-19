@@ -15,8 +15,8 @@
 set ::env(PL_TARGET_DENSITY) 0.6
 
 # CLOCK_PERIOD - Increase this in case you are getting setup time violations.
-# The value is in nanoseconds, so 20ns == 50MHz.
-set ::env(CLOCK_PERIOD) "20"
+# The value is in nanoseconds, so 15.1515ns ~= 66MHz.
+set ::env(CLOCK_PERIOD) "15.1515"
 
 # Hold slack margin - Increase them in case you are getting hold violations.
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.1
@@ -25,6 +25,14 @@ set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.05
 # RUN_LINTER, LINTER_INCLUDE_PDK_MODELS - Disabling the linter is not recommended!
 set ::env(RUN_LINTER) 1
 set ::env(LINTER_INCLUDE_PDK_MODELS) 1
+
+# Import to trick OpenLane into placing StdCell macros where we want them
+set ::env(EXTRA_LEFS) [glob $::env(DESIGN_DIR)/dummy_macro/lef/dummy.lef]
+set ::env(MACRO_PLACEMENT_CFG) [glob $::env(DESIGN_DIR)/place/macro_placement.cfg]
+set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
+
+# Don't let OpenLane modify the delay line - willing to sacrafice performance for linnearity
+source [glob $::env(DESIGN_DIR)/place/resizer_dont_touch.tcl]
 
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
 
@@ -71,7 +79,9 @@ set ::env(DECAP_CELL) "\
 
 # Clock
 set ::env(RUN_CTS) 1
-set ::env(CLOCK_PORT) {clk}
+set ::env(CLOCK_PORT) "ui_in\\\[0\\\]"
+# Custom SDC file for STA - includes the clock port below
+set ::env(BASE_SDC_FILE) [glob $::env(DESIGN_DIR)/sdc/tt_um_hsc_tdc.sdc]
 
 # Don't use power rings or met5 layer
 set ::env(DESIGN_IS_CORE) 0
