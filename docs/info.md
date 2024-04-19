@@ -32,7 +32,7 @@ clk_l (launch clock),
 
 clk_c (capture clock), and
 
-reg (named pg_bypass in the top level module and can be used to bypass a register stage used to synchronize the timing of streamed data)
+reg (named pg_bypass in the top level module and used to bypass a register stage used to synchronize the timing of streamed data)
 
 Along with 8 output pins: 
 
