@@ -35,5 +35,5 @@ test/tdc_vcd_to_json.py
 test/test_git.py
 test/test_local.py
 test/test_rtl.py
-test/test_old
+test_old/
 tt/
