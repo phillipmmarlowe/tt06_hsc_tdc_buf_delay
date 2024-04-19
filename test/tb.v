@@ -76,7 +76,7 @@ module tb ();
         clk = 1'b0;
     end
 
-    tt_um_hsc_tdc tdc_inst (
+    tt_um_hsc_tdc_buf tdc_inst (
         // Include power ports for the Gate Level test:
         `ifdef USE_POWER_PINS
             .VPWR(1'b1),
