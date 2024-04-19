@@ -4,8 +4,8 @@ CORNER        ?= nom
 OC            ?= Slowest
 SDF_TIMING    ?= typ
 FIXED_PDK_DIR ?= $(HOME)/pdk_sim_files/verilog/cvc-pdk
-SDF_RENAMED   ?= "./sdf_renamed_out/multicorner/$(CORNER)/tt_um_hsc_tdc.$(OC).sdf"
-GLN_RENAMED   ?= ./gln_renamed_out/tt_um_hsc_tdc.v
+SDF_RENAMED   ?= "./sdf_renamed_out/multicorner/$(CORNER)/tt_um_hsc_tdc_buf.$(OC).sdf"
+GLN_RENAMED   ?= ./gln_renamed_out/tt_um_hsc_tdc_buf.v
 SIM           ?= icarus
 GATES         ?= no
 
