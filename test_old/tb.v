@@ -1,15 +1,12 @@
 `default_nettype none 
 `timescale 1ns/1ps
-`define TOSTRING(x) `"x`"
 
 module tb ();
-
-  string sdf_path = `TOSTRING(`SDF);
 
   // Dump the signals to a VCD file. You can view it with gtkwave.
   initial begin
     `ifdef SDF_ANNOTATE
-        $sdf_annotate(sdf_path, tdc_inst) ;
+        $sdf_annotate("./rename_gl/renamed_sdf/multicorner/nom/tt_um_hsc_tdc.Typical.sdf", tdc_inst) ;
     `endif
     `ifdef WAVES
         $dumpfile("tb.vcd");

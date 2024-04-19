@@ -8,7 +8,7 @@ from cocotb.decorators import coroutine
 # TODO: move elsewhere
 class TDCCtrl:
     
-    def __init__(self, clk_period, dut, n_sync_stages, is_inverted=True):
+    def __init__(self, clk_period, dut, n_sync_stages, is_inverted=False):
         
         self.clk_period=clk_period
         self.dut=dut
@@ -136,10 +136,9 @@ class TDCCtrl:
         self.dut.val_in.value = 0
 
     async def __stress_delay_line__(self, stress_val):
-        assert self.dut.pg_src.value != self.src_ctrl["PG_TOG"]
-        enable_init = self.dut.ena.value
-        self.dut.ena.value = 1
-        
+        self.dut.val_in.value = 1
+        await ClockCycles(self.dut.clk_launch, n)
+        self.dut.val_in.value = 0
 
     async def __get_sample__(self):
         '''
