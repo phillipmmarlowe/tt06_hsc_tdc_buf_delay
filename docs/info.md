@@ -22,7 +22,7 @@ To begin, there are seven input pins:
 
 pg_in (user controlled pulse input), 
 
-tog_in (constant oscillating square wave at a quarter of clock speed),
+tog_in (constant oscillating square wave at a quarter of clock speed independent of user controlled phase shift),
 
 pg_src (to select between pg_in and tog_in), 
 
