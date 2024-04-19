@@ -21,8 +21,8 @@ module delay_line #(
                 //(* keep *) logic 
                     //keep_co;
 			    rca_dl #(.WIDTH(N)) dl (
-			          .pulse_i(in),
-                      .meas_o(dl_out)
+			          .pulse(in),
+                      .meas(dl_out)
 			    );
             	end
 		    "DAND": begin : dl_genblk
