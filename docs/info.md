@@ -24,7 +24,7 @@ pg_in (user controlled pulse input),
 
 tog_in (constant oscillating square wave at a quarter of clock speed),
 
-pg_src (to select between pg_in and pg_src), 
+pg_src (to select between pg_in and tog_in), 
 
 valid_in (valid protocol for streaming interface), 
 
