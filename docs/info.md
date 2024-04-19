@@ -20,7 +20,7 @@ Setup VCS on you local machine, cd to test run:
 
 To begin, there are seven input pins: 
 
-pg_in (user controlled pulse input), 
+pg_in (user controlled input pulse), 
 
 tog_in (constant oscillating square wave at a quarter of clock speed independent of user controlled phase shift),
 
