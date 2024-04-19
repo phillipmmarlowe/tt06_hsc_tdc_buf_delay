@@ -45,3 +45,4 @@ The input pins are intended to be controlled by an external FPGA which will also
 The following schematic describes this visually.
 
 ![Pin Handling and Abstracted Inner TDC Modules Schematic](./tdc.png)
+- Constructed and Visualized by Tyler Sheaves (@tsheaves), Dustin Richmond (@drichmond)
