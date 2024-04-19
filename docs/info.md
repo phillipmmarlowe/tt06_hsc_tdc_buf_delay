@@ -40,7 +40,7 @@ hw_out[6:0] (Hamming weight decoder output to quantize the length traveled of th
 
 valid_out (valid protocol for streaming interface). 
 
-The input pins are intended to be controlled by an external FPGA which will also handle the data received from the output pins. The actual delay line location can be seen by the module with triangle shaped symbols (similar to a line of interconnected standard buffer symbols).
+The input pins are intended to be controlled by an external FPGA which will also handle the data received from the output pins. The actual delay line location can be seen by the module with triangle shaped symbols (similar to a line of interconnected standard buffer symbols). In this particular design, the delay line is constructed of standard buffer cells.
 
 The following schematic describes this visually.
 
